@@ -1,1 +1,90 @@
-<p>listado works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col col-8">
+        <!-- Primera columna -->
+        <strong>Clientes</strong>
+        <button type="button" class="btn btn-primary btn-sm float-right mb-3" disabled>Nuevo</button>
+        <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Documento</th>
+                <th scope="col">Teléfono</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Joaquín Castillo</td>
+                <td>32506109</td>
+                <td>0303456</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Hernán Deudor</td>
+                <td>32506110</td>
+                <td>0800deudor</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <!-- Columna 2 -->
+      <!-- <span class="border-top-0"></span> -->
+      <div class="col col-4" >      
+        <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" class="form-control" id="inputPassword4">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Address 2</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+              </div>
+            </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="button" class="btn btn-primary btn-sm" disabled>Editar</button>
+                        <button type="button" class="btn btn-secondary btn-sm" disabled>Eliminar</button>  
+                      </div>
+                      <!-- <div class="col text-center">
+                        <button type="button" class="btn btn-secondary btn-sm" disabled>Eliminar</button>  
+                      </div> -->
+                </div>
+          </form>
+      </div>
+    
+    </div>
+
+  </div>
