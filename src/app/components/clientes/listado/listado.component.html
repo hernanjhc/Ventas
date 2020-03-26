@@ -1,14 +1,15 @@
 <div class="container">
     <div class="row">
       <div class="col col-8">
-        <!-- Primera columna -->
+        <!-- Columna 1-->
         <strong>Clientes</strong>
-        <button type="button" class="btn btn-primary btn-sm float-right mb-3" disabled>Nuevo</button>
+        <!-- <button type="button" class="btn btn-primary btn-sm float-right mb-3" [routerLink]="['/NuevoCliente']" data-toggle="modal" data-target="#clienteModal" data-whatever="@mdo">Nuevo</button> -->
+        <button type="button" class="btn btn-primary btn-sm float-right mb-3" data-toggle="modal" data-target="#clienteModal">Nuevo</button>
         <table class="table table-sm">
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nombre</th>
+                <th scope="col">Razón Social</th>
                 <th scope="col">Documento</th>
                 <th scope="col">Teléfono</th>
               </tr>
@@ -26,65 +27,78 @@
                 <td>32506110</td>
                 <td>0800deudor</td>
               </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
             </tbody>
           </table>
+        <!--Paginación-->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-end">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>        
       </div>
+      <!--fin columna 1 -->
+      
       <!-- Columna 2 -->
-      <!-- <span class="border-top-0"></span> -->
       <div class="col col-4" >      
         <form>
-            <div class="form-row">
+          <div class="form-group">
+            <label for="cliente-razon-social">Razón Social</label>
+            <input type="text" class="form-control" id="cliente-razon-social" placeholder="Razón Social" disabled>
+          </div>
+          <div class="form-group">
+            <label for="cliente-condicion-iva">Condición IVA</label>
+            <input type="text" class="form-control" id="cliente-condicion-iva" placeholder="Condición IVA" disabled>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-5">
+              <label for="cliente-tipo-documento">Tipo Documento</label>
+              <input type="text" class="form-control" id="cliente-tipo-documento" placeholder="CUIT" disabled>
+            </div>
+            <div class="form-group col-md-7">
+              <label for="cliente-numero-documento">Nro Documento</label>
+              <input type="text" class="form-control" id="cliente-numero-documento" placeholder="20223334440" disabled>
+            </div>
+          </div>
+          <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
+                <label for="cliente-celular">Celular</label>
+                <input type="email" class="form-control" id="inputCelular" placeholder="0385-150000000" disabled>
               </div>
-              <div class="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4">
+              <div class="form-group  col-md-6">
+                <label for="inputDirección">Teléfono</label>
+                <input type="text" class="form-control" id="cliente-celular" placeholder="0385-4270000" disabled>
+              </div>     
+          </div>
+          <div class="form-group">
+            <label for="cliente-email">Email</label>
+            <input type="text" class="form-control" id="cliente-email" placeholder="nombre@dominio.com" disabled>
+          </div>
+          <div class="form-group">
+            <label for="cliente-direccion">Dirección</label>
+            <input type="text" class="form-control" id="cliente-direccion" placeholder="1234 Main St" disabled>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="cliente-estado">
+            <label class="form-check-label" for="cliente-estado">Habilitado</label>
+          </div>
+          <div class="row">
+              <div class="col text-center">
+                  <button type="button" class="btn btn-primary btn-sm" disabled>Editar</button>
+                  <button type="button" class="btn btn-secondary btn-sm" disabled>Eliminar</button>  
               </div>
-            </div>
-            <div class="form-group">
-              <label for="inputAddress">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="form-group">
-              <label for="inputAddress2">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
-              </div>
-              <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>...</option>
-                </select>
-              </div>
-              <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-              </div>
-            </div>
-                <div class="row">
-                    <div class="col text-center">
-                        <button type="button" class="btn btn-primary btn-sm" disabled>Editar</button>
-                        <button type="button" class="btn btn-secondary btn-sm" disabled>Eliminar</button>  
-                      </div>
-                      <!-- <div class="col text-center">
-                        <button type="button" class="btn btn-secondary btn-sm" disabled>Eliminar</button>  
-                      </div> -->
-                </div>
-          </form>
+          </div>
+        </form>
       </div>
     
     </div>
 
   </div>
+  <app-nuevo></app-nuevo>
