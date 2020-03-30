@@ -77,7 +77,7 @@ a:focus {
     padding: 20px;
     /*background: #6d7fcc;*/
     background: #f1f1f1;
-    color: #17a2b8;/*se cambia color*/
+    color: #007bff; /*se cambia color  #17a2b8;*/
     font-family: 'Allerta Stencil', sans-serif;
 
   
@@ -104,7 +104,7 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #17a2b8;
+    color: #007bff; /* #17a2b8; */
     background: #fff;
 }
 
@@ -149,12 +149,12 @@ ul.CTAs a {
 
 a.download {
     background: #fff;
-    color: #17a2b8;
+     color:#007bff; /*#17a2b8; */
 }
 
 a.article,
 a.article:hover {
-    background: #17a2b8 !important;
+    background: #007bff; /* #17a2b8 !important; */
     color: #fff !important;
 }
 

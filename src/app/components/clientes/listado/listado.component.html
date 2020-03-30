@@ -10,25 +10,22 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Razón Social</th>
+                <th scope="col">Condición IVA</th>
                 <th scope="col">Documento</th>
                 <th scope="col">Teléfono</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Joaquín Castillo</td>
-                <td>32506109</td>
-                <td>0303456</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Hernán Deudor</td>
-                <td>32506110</td>
-                <td>0800deudor</td>
-              </tr>
+              <tr *ngFor="let cliente of clientes; index as i">
+               <th scope="row">{{i+1}}</th>
+               <td>{{cliente.razonSocial}}</td>
+               <td>{{cliente.condIVA}}</td>
+               <td>{{cliente.nroDocumento}}</td>
+               <td>{{cliente.telefono}}</td>
+              </tr>        
             </tbody>
           </table>
+
         <!--Paginación-->
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-end">
@@ -91,9 +88,17 @@
           </div>
           <div class="row">
               <div class="col text-center">
-                  <button type="button" class="btn btn-primary btn-sm" disabled>Editar</button>
-                  <button type="button" class="btn btn-secondary btn-sm" disabled>Eliminar</button>  
-              </div>
+               
+                  <div class="btn-group mr-2">
+                    <button type="button" class="btn btn-primary btn-sm"  disabled>Editar</button>                    
+                  </div>
+                  <div class="btn-group mr-2">
+                    <button type="button" class="btn btn-secondary btn-sm" disabled>Eliminar</button>                     
+                  </div>                  
+                </div>
+              
+
+              
           </div>
         </form>
       </div>
