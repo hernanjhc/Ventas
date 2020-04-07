@@ -14,16 +14,15 @@ export class ClientesService {
     this.clientesCollection = afs.collection<Cliente>('clientes');
     this.clientes = this.clientesCollection.valueChanges();
   }
-
   private clientesCollection: AngularFirestoreCollection<Cliente>;
   private clientes: Observable<Cliente[]>;
-  /* private solicitudDoc: AngularFirestoreDocument<Solicitud>;
-  private solicitud: Observable<Solicitud>; */
-  /* public selectedSolicitud: Solicitud = {
+  private clienteDoc: AngularFirestoreDocument<Cliente>;
+  private cliente: Observable<Cliente>; 
+  public selectedCliente: Cliente = {
     id: null
-  }; */
+  };
 
-  getClientes() {
+   getClientes() {
     this.clientesCollection = this.afs.collection<Cliente>('clientes');
     return this.clientes = this.clientesCollection.snapshotChanges()
       .pipe(map(changes => {
@@ -35,8 +34,37 @@ export class ClientesService {
       }));
   }
 
-  addCliente(cliente: Cliente): void {
+
+  /* addCliente(cliente: Cliente): void {
     this.clientesCollection.add(cliente);
+  } */
+
+  addCliente(cliente: Cliente): void {
+    this.clientesCollection.add(
+      { /*  id?: string; */
+        tipoDocumento: cliente.tipoDocumento,
+        nroDocumento: cliente.nroDocumento,
+        razonSocial: cliente.razonSocial,
+        condIVA: cliente.condIVA ?? '',
+        telefono: cliente.telefono ?? '',
+        celular: cliente.telefono ?? '',
+        email: cliente.email ?? '',
+        direccion: cliente.direccion ?? '',
+        codPostal: cliente.codPostal ?? '',
+        estado: 'Activo'       
+      }
+    );
+  }
+  deleteCliente(idCliente: string): void {
+    this.clienteDoc = this.afs.doc<Cliente>(`clientes/${idCliente}`);    
+    this.clienteDoc.delete();
+    /* console.log('cliente', idCliente); */
+  }
+
+  updateCliente(cliente: Cliente): void {
+    let idCliente = cliente.id;
+    this.clienteDoc = this.afs.doc<Cliente>(`clientes/${idCliente}`);
+    this.clienteDoc.update(cliente);
   }
 
 }

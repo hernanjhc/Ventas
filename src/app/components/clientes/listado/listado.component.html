@@ -1,29 +1,39 @@
-<div class="container">
+<section class="row mt-5">
+  <div class="container">
     <div class="row">
       <div class="col col-8">
         <!-- Columna 1-->
         <strong>Clientes</strong>
-        <!-- <button type="button" class="btn btn-primary btn-sm float-right mb-3" [routerLink]="['/NuevoCliente']" data-toggle="modal" data-target="#clienteModal" data-whatever="@mdo">Nuevo</button> -->
         <button type="button" class="btn btn-primary btn-sm float-right mb-3" data-toggle="modal" data-target="#clienteModal">Nuevo</button>
+        
         <table class="table table-sm">
             <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Razón Social</th>
-                <th scope="col">Condición IVA</th>
                 <th scope="col">Documento</th>
+                <th scope="col">Celular</th>
                 <th scope="col">Teléfono</th>
+                <th scope="col">E-Mail</th>
+                <th scope="col"></th>
+                
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let cliente of clientes; index as i">
                <th scope="row">{{i+1}}</th>
                <td>{{cliente.razonSocial}}</td>
-               <td>{{cliente.condIVA}}</td>
                <td>{{cliente.nroDocumento}}</td>
+               <td>{{cliente.celular}}</td>
                <td>{{cliente.telefono}}</td>
+               <td>{{cliente.email}}</td>
+               <td>
+                  <button class="btn btn-light" style="margin: 2px" data-toggle="modal" data-target="#edit" (click)="PreUpdateCliente(cliente)"><i class="far fa-edit"></i></button>
+                  <button class="btn btn-light" style="margin: 2px" data-toggle="modal" data-target="#eliminar" (click)="deleteCliente(cliente.id)"><i class="far fa-trash-alt"></i></button>
+              </td>
               </tr>        
-            </tbody>
+            </tbody>           
+
           </table>
 
         <!--Paginación-->
@@ -41,59 +51,76 @@
           </ul>
         </nav>        
       </div>
+      
       <!--fin columna 1 -->
       
       <!-- Columna 2 -->
-      <div class="col col-4" >      
-        <form>
+      <div class="col col-4"  >      
+        <h5 class="modal-title" id="exampleModalLabel">
+          {{ this.clientesServ.selectedCliente.id ? 'Actualizar Cliente' : 'Nuevo Cliente' }}
+        </h5>
+        <form name="clienteForm" #formCliente="ngForm" (ngSubmit)="saveCliente(formCliente)">
+          <input type="hidden" name="id" [(ngModel)]="this.clientesServ.selectedCliente.id">
           <div class="form-group">
             <label for="cliente-razon-social">Razón Social</label>
-            <input type="text" class="form-control" id="cliente-razon-social" placeholder="Razón Social" disabled>
+            <input type="text" class="form-control" name="razonSocial" placeholder="Razón Social" [(ngModel)]="this.clientesServ.selectedCliente.razonSocial">
           </div>
           <div class="form-group">
             <label for="cliente-condicion-iva">Condición IVA</label>
-            <input type="text" class="form-control" id="cliente-condicion-iva" placeholder="Condición IVA" disabled>
+            <select name="condIVA" class="form-control" [(ngModel)]="this.clientesServ.selectedCliente.condIVA">
+              <option value="0">No Inscripto</option>
+              <option value="1">Monotributo</option>
+              <option value="2">Resp. Inscripto</option>
+            </select>
           </div>
           <div class="form-row">
             <div class="form-group col-md-5">
               <label for="cliente-tipo-documento">Tipo Documento</label>
-              <input type="text" class="form-control" id="cliente-tipo-documento" placeholder="CUIT" disabled>
+              <select name="tipoDocumento" class="form-control" [(ngModel)]="this.clientesServ.selectedCliente.tipoDocumento">
+                <option value="0">DNI</option>
+                <option value="1">L. Cívica</option>
+                <option value="2">L. Enrolamiento</option>
+                <option value="2">Otro</option>
+              </select>  
             </div>
             <div class="form-group col-md-7">
               <label for="cliente-numero-documento">Nro Documento</label>
-              <input type="text" class="form-control" id="cliente-numero-documento" placeholder="20223334440" disabled>
+              <input type="text" class="form-control" name="nroDocumento" placeholder="20223334440" [(ngModel)]="this.clientesServ.selectedCliente.nroDocumento">
             </div>
           </div>
           <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="cliente-celular">Celular</label>
-                <input type="email" class="form-control" id="inputCelular" placeholder="0385-150000000" disabled>
+                <input type="text" class="form-control" name="celular" placeholder="0385-150000000" [(ngModel)]="this.clientesServ.selectedCliente.celular">
               </div>
               <div class="form-group  col-md-6">
                 <label for="inputDirección">Teléfono</label>
-                <input type="text" class="form-control" id="cliente-celular" placeholder="0385-4270000" disabled>
+                <input type="text" class="form-control" name="telefono" placeholder="0385-4270000" [(ngModel)]="this.clientesServ.selectedCliente.telefono">
               </div>     
           </div>
           <div class="form-group">
             <label for="cliente-email">Email</label>
-            <input type="text" class="form-control" id="cliente-email" placeholder="nombre@dominio.com" disabled>
+            <input type="text" class="form-control" name="email" placeholder="nombre@dominio.com" [(ngModel)]="this.clientesServ.selectedCliente.email">
           </div>
-          <div class="form-group">
-            <label for="cliente-direccion">Dirección</label>
-            <input type="text" class="form-control" id="cliente-direccion" placeholder="1234 Main St" disabled>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="cliente-direccion">Cod. Postal</label>
+              <input type="text" class="form-control" name="codPostal" placeholder="4200" [(ngModel)]="this.clientesServ.selectedCliente.codPostal">
+            </div>
+            <div class="form-group col-md-8">
+              <label for="cliente-direccion">Dirección</label>
+              <input type="text" class="form-control" name="direccion" placeholder="1234 Main St" [(ngModel)]="this.clientesServ.selectedCliente.direccion">
+            </div>
           </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="cliente-estado">
-            <label class="form-check-label" for="cliente-estado">Habilitado</label>
-          </div>
+          
           <div class="row">
               <div class="col text-center">
                
                   <div class="btn-group mr-2">
-                    <button type="button" class="btn btn-primary btn-sm"  disabled>Editar</button>                    
+                    <button type="submit" class="btn btn-primary btn-sm"  >Aceptar</button>                    
                   </div>
                   <div class="btn-group mr-2">
-                    <button type="button" class="btn btn-secondary btn-sm" disabled>Eliminar</button>                     
+                    <button type="button" class="btn btn-secondary btn-sm" >Cancelar</button>                     
                   </div>                  
                 </div>
               
@@ -106,4 +133,6 @@
     </div>
 
   </div>
-  <app-nuevo></app-nuevo>
+</section> 
+
+<!-- <app-nuevo></app-nuevo> -->

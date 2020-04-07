@@ -5,14 +5,21 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyA9gaWfmBMYQ_7iVUepoeuRVsGjlomk9EM",
-    authDomain: "ventas-firebase.firebaseapp.com",
-    databaseURL: "https://ventas-firebase.firebaseio.com",
-    projectId: "ventas-firebase",
-    storageBucket: "ventas-firebase.appspot.com",
-    messagingSenderId: "6763859789",
-    appId: "1:6763859789:web:28aa88aa55e1c4314af104",
-    measurementId: "G-9P7770V7MM"}
+    /* apiKey: "AIzaSyDStgMyQ8fIKMi4Z7xXEXuxCG9PtfzVZ6E",
+    authDomain: "bookstore-5bff9.firebaseapp.com",
+    databaseURL: "https://bookstore-5bff9.firebaseio.com",
+    projectId: "bookstore-5bff9",
+    storageBucket: "bookstore-5bff9.appspot.com",
+    messagingSenderId: "220167186376",
+    appId: "1:220167186376:web:b5bb899647025e831c82fd" */
+    apiKey: "AIzaSyAN3EQLk9T41zBzFhZwtg5bQS4oNvhI33I",
+    authDomain: "ventas-b468e.firebaseapp.com",
+    databaseURL: "https://ventas-b468e.firebaseio.com",
+    projectId: "ventas-b468e",
+    storageBucket: "ventas-b468e.appspot.com",
+    messagingSenderId: "551235697056",
+    appId: "1:551235697056:web:b34c0f8f918fc02e57ccc5"
+}
 };
 
 /*

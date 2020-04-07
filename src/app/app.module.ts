@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { TemplateComponent } from './components/template/template.component';
 import { ListadoComponent } from './components/clientes/listado/listado.component';
-import { NuevoComponent } from './components/clientes/nuevo/nuevo.component';
+/* import { NuevoComponent } from './components/clientes/nuevo/nuevo.component'; */
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { AngularFireModule } from '@angular/fire';
@@ -25,16 +25,13 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     TemplateComponent,
     ListadoComponent,
-    NuevoComponent,
+    /* NuevoComponent, */
     NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireStorageModule,
-
+    
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
