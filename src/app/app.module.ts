@@ -18,6 +18,8 @@ import { environment } from 'src/environments/environment';
 
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
+import {NgxPaginationModule} from 'ngx-pagination'
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     TemplateComponent,
     ListadoComponent,
     /* NuevoComponent, */
-    NotFoundComponent
+    NotFoundComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { FormsModule } from '@angular/forms';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
+    NgxPaginationModule,
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]

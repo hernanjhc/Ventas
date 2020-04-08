@@ -13,6 +13,8 @@ export class ListadoComponent implements OnInit {
   constructor(public clientesServ: ClientesService) { }
   @ViewChild('btnClose') btnClose: ElementRef;
   public clientes: Cliente[];
+  filterClientes = '';
+  pageActual: number = 1;
 
   ngOnInit(): void {
     this.getClientes();
