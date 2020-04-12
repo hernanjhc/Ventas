@@ -12,14 +12,17 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 
 
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
-import {NgxPaginationModule} from 'ngx-pagination'
+import {NgxPaginationModule} from 'ngx-pagination';
+import { ProveedoresComponent } from './components/proveedores/proveedores/proveedores.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import {NgxPaginationModule} from 'ngx-pagination'
     ListadoComponent,
     /* NuevoComponent, */
     NotFoundComponent,
-    FilterPipe
+    FilterPipe,
+    ProveedoresComponent,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +46,7 @@ import {NgxPaginationModule} from 'ngx-pagination'
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     NgxPaginationModule,
+    AngularFireAuthModule
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]
