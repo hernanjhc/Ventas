@@ -22,7 +22,9 @@ import { FilterPipe } from './pipes/filter.pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ProveedoresComponent } from './components/proveedores/proveedores/proveedores.component';
 import { LoginComponent } from './components/login/login.component';
-import { RegistroComponent } from './components/registro/registro.component'
+import { RegistroComponent } from './components/registro/registro.component';
+import { MarcasComponent } from './components/marcas/marcas/marcas.component';
+import { NuevoComponent } from './components/marcas/nuevo/nuevo.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { RegistroComponent } from './components/registro/registro.component'
     FilterPipe,
     ProveedoresComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    MarcasComponent,
+    NuevoComponent
   ],
   imports: [
     BrowserModule,

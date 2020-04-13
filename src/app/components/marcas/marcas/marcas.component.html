@@ -1,0 +1,33 @@
+<div class="col col-8">
+    <button class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalMarca">Nueva Marca</button>
+    <strong>Marcas</strong>
+    <input type="text" class="form-control" name="filterMarcas" placeholder="Buscar..." [(ngModel)]="filterMarcas">
+    
+    <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Observaciones</th>
+            <th scope="col"></th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let marca of marcas | filter:filterMarcas | paginate: { itemsPerPage: 1, currentPage: pageActual }; index as i ">
+           <th scope="row">{{i+1}}</th>
+           <td>{{marca.descripcion}}</td>
+           <td>{{marca.observaciones}}</td>
+           <td>
+              <button class="btn btn-light" style="margin: 2px" data-toggle="modal" data-target="#modalMarca" (click)="PreUpdateMarca(marca)"><i class="far fa-edit"></i></button>
+              <button class="btn btn-light" style="margin: 2px" data-toggle="modal" data-target="#eliminar" (click)="deleteMarca(marca.id)"><i class="far fa-trash-alt"></i></button>
+          </td>
+          </tr>        
+        </tbody>           
+
+      </table>
+
+    <!--Paginación-->
+    <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>    
+  </div>
+  <app-nuevo></app-nuevo>

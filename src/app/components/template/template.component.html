@@ -45,10 +45,7 @@
                         <a href="#">Productos</a>
                     </li>
                     <li>
-                        <a href="#">Marcas</a>
-                    </li>
-                    <li>
-                        <a href="#">Marcas</a>
+                        <a routerLink="/Marcas" routerLinkActive="active">Marcas</a>
                     </li>
                     <li>
                         <a href="#">Rubros</a>
@@ -68,15 +65,9 @@
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
                         class="fas fa-cog"></i> Configuracion</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
+                    <!-- <li>
                         <a class="nav-link" routerLink="/documentos" routerLinkActive="active"> Tipos de Documento</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
+                    </li> -->
                 </ul>
             </li>
         </ul>
@@ -115,17 +106,21 @@
                               Salir</a>
                           </li>
                         </ul> -->
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Cuenta
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" routerLink ="/Login" *ngIf="!auth.isOk">Login</a>
-                            <a class="dropdown-item" routerLink ="/Registro" *ngIf="!auth.isOk">Registro</a>
-                            <a class="dropdown-item" (click)="auth.logOut()" *ngIf="auth.isOk">Salir</a>
+                    <ul class="nav navbar-nav ml-auto">
+
+
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Cuenta
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" routerLink="/Login" *ngIf="!auth.isOk">Login</a>
+                                <a class="dropdown-item" routerLink="/Registro" *ngIf="!auth.isOk">Registro</a>
+                                <a class="dropdown-item" (click)="auth.logOut()" *ngIf="auth.isOk">Salir</a>
+                            </div>
                         </div>
-                    </div>
+                    </ul>                    
+
                 </div>
             </div>
         </nav>

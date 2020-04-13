@@ -1,0 +1,36 @@
+<div class="modal fade" id="modalMarca" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    {{ !this.marcasServ.selectedMarca.id ? 'Nueva Marca' : 'Actualizar Marca'}}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="marcaForm" #formMarca="ngForm" (ngSubmit)="saveMarca(formMarca)">
+                    <input type="hidden" name="id" [(ngModel)]="this.marcasServ.selectedMarca.id">
+
+                    <div class="form-group">
+                        <label for="descripcion" class="col-form-label">Descripcion:</label>
+                        <input type="text" class="form-control" name="descripcion"
+                            [(ngModel)]="this.marcasServ.selectedMarca.descripcion">
+                    </div>
+                    <div class="form-group">
+                        <label for="observaciones" class="col-form-label">observaciones:</label>
+                        <input type="text-area" class="form-control" name="observaciones"
+                            [(ngModel)]="this.marcasServ.selectedMarca.observaciones">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" #btnClose data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

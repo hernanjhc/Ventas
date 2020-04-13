@@ -6,6 +6,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProveedoresComponent } from './components/proveedores/proveedores/proveedores.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { MarcasComponent } from './components/marcas/marcas/marcas.component';
+import {NuevoComponent} from './components/marcas/nuevo/nuevo.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -14,6 +16,8 @@ const routes: Routes = [
   {path: 'Proveedores', component: ProveedoresComponent},
   {path: 'Login', component: LoginComponent},
   {path: 'Registro', component: RegistroComponent},  
+  {path: 'Marcas', component: MarcasComponent},
+  {path: 'Marcas/Nuevo', component: NuevoComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
