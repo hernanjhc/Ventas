@@ -110,10 +110,10 @@
 
 
                         <div class="dropdown">
-                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fas fa-user"></i>
                                 Cuenta
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" routerLink="/Login" *ngIf="!auth.isOk">Login</a>
                                 <a class="dropdown-item" routerLink="/Registro" *ngIf="!auth.isOk">Registro</a>
                                 <a class="dropdown-item" (click)="auth.logOut()" *ngIf="auth.isOk">Salir</a>
