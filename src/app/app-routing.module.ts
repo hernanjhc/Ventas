@@ -9,6 +9,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { MarcasComponent } from './components/marcas/marcas/marcas.component';
 /* import {NuevoComponent} from './components/marcas/nuevo/nuevo.component'; */
 import { UnidadesComponent } from './components/unidades/unidades/unidades.component';
+import { RubrosComponent } from './components/rubros/rubros/rubros.component';
 /* import { NuevaUnidadComponent } from './components/unidades/nuevo/nuevo.component'; */
 
 const routes: Routes = [
@@ -19,8 +20,8 @@ const routes: Routes = [
   {path: 'Login', component: LoginComponent},
   {path: 'Registro', component: RegistroComponent},  
   {path: 'Marcas', component: MarcasComponent},
-  /* {path: 'Marcas/Nuevo', component: NuevoComponent}, */
   {path: 'Unidades', component: UnidadesComponent},
+  {path: 'Rubros', component: RubrosComponent},
   {path: '**', component: NotFoundComponent}
 ];
 

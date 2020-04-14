@@ -27,6 +27,8 @@ import { MarcasComponent } from './components/marcas/marcas/marcas.component';
 import { NuevoComponent } from './components/marcas/nuevo/nuevo.component';
 import { UnidadesComponent } from './components/unidades/unidades/unidades.component';
 import { NuevaUnidadComponent } from './components/unidades/nueva-unidad/nueva-unidad.component';
+import { RubrosComponent } from './components/rubros/rubros/rubros.component';
+import { NuevoRubroComponent } from './components/rubros/nuevo-rubro/nuevo-rubro.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { NuevaUnidadComponent } from './components/unidades/nueva-unidad/nueva-u
     MarcasComponent,
     NuevoComponent,
     UnidadesComponent,
-    NuevaUnidadComponent
+    NuevaUnidadComponent,
+    RubrosComponent,
+    NuevoRubroComponent
   ],
   imports: [
     BrowserModule,
