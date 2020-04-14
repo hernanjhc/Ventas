@@ -7,7 +7,9 @@ import { ProveedoresComponent } from './components/proveedores/proveedores/prove
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { MarcasComponent } from './components/marcas/marcas/marcas.component';
-import {NuevoComponent} from './components/marcas/nuevo/nuevo.component';
+/* import {NuevoComponent} from './components/marcas/nuevo/nuevo.component'; */
+import { UnidadesComponent } from './components/unidades/unidades/unidades.component';
+/* import { NuevaUnidadComponent } from './components/unidades/nuevo/nuevo.component'; */
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +19,8 @@ const routes: Routes = [
   {path: 'Login', component: LoginComponent},
   {path: 'Registro', component: RegistroComponent},  
   {path: 'Marcas', component: MarcasComponent},
-  {path: 'Marcas/Nuevo', component: NuevoComponent},
+  /* {path: 'Marcas/Nuevo', component: NuevoComponent}, */
+  {path: 'Unidades', component: UnidadesComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
